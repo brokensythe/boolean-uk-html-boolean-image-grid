@@ -30,13 +30,21 @@ main {
   background-color: #fff;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template:
+    ". content . " 100% /
+    0.7fr 3fr 0.7fr;
+}
+
+article {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  padding: 25px 0;
 }
 
 section {
-  height: auto;
   border: 2px solid #123e23;
-  width: 320px;
   display: grid;
   position: relative;
   border-radius: 20px;
